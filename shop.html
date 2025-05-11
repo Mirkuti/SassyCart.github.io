@@ -28,6 +28,40 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>SassyCart</title>
+    <style>
+      /* Additional styles for responsive products */
+      .product-card {
+        height: 100%;
+        margin-bottom: 20px;
+      }
+
+      /* Optional: Ensure uniform card heights */
+      .product-card .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card .card-title {
+        flex-grow: 1;
+      }
+
+      /* Fix for star ratings to appear horizontally */
+      .star .material-symbols-outlined {
+        font-size: 16px;
+      }
+
+      /* Adjust spacing for mobile */
+      @media (max-width: 767px) {
+        .product-container {
+          padding: 0 10px;
+        }
+
+        /* Make stars slightly smaller on mobile */
+        .star .material-symbols-outlined {
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg p-3 fixed-top bg-light shadow">
@@ -124,259 +158,319 @@
           </button>
         </form>
       </div>
-      <div class="row mx-auto container col-md-9">
-        <!-- Product 1 -->
-        <div class="card product" style="width: 18rem">
-          <img
-            src="images/featured-1.jpg"
-            class="card-img-top mb-3"
-            alt="..."
-          />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">EIGHT-BnL Shirt</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
-          </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="EIGHT-BnL Shirt"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 2 -->
-        <div class="card product" style="width: 18rem">
-          <img
-            src="images/featured-3.jpg"
-            class="card-img-top mb-3"
-            alt="..."
-          />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Our-nfinty</h5>
-            <h4 class="card-text btn p-price">₱92.00</h4>
+      <!-- Modified product grid with responsive columns -->
+      <div class="container product-container">
+        <div class="row">
+          <!-- Product 1 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/featured-1.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">EIGHT-BnL Shirt</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="EIGHT-BnL Shirt"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Our-nfinty"
-            data-price="92.00"
-            data-micron="squeeze"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 3 -->
-        <div class="card product" style="width: 18rem">
-          <img
-            src="images/featured-4.jpg"
-            class="card-img-top mb-3"
-            alt="..."
-          />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Penshoppee-CruelWorld</h5>
-            <h4 class="card-text btn p-price">₱76.00</h4>
+          <!-- Product 2 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/featured-3.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Our-nfinty</h5>
+                <h4 class="card-text btn p-price">₱92.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Our-nfinty"
+                data-price="92.00"
+                data-micron="squeeze"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Penshoppee-CruelWorld"
-            data-price="76.00"
-            data-micron="blink"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 4 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/4.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">WorldBalance</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
+          <!-- Product 3 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/featured-4.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Penshoppee-CruelWorld</h5>
+                <h4 class="card-text btn p-price">₱76.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Penshoppee-CruelWorld"
+                data-price="76.00"
+                data-micron="blink"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="WorldBalance"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 5 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/5.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Addidas</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
+          <!-- Product 4 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img src="images/4.jpg" class="card-img-top mb-3" alt="..." />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">WorldBalance</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="WorldBalance"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Addidas"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 6 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/6.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Ankle Boots</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
+          <!-- Product 5 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img src="images/5.jpg" class="card-img-top mb-3" alt="..." />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Addidas</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Addidas"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Ankle Boots"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 7 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/7.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Suede High-Top Boots</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
+          <!-- Product 6 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img src="images/6.jpg" class="card-img-top mb-3" alt="..." />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Ankle Boots</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Ankle Boots"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Suede High-Top Boots"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 8 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/8.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">Nike</h5>
-            <h4 class="card-text btn p-price">₱50.00</h4>
+          <!-- Product 7 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img src="images/7.jpg" class="card-img-top mb-3" alt="..." />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Suede High-Top Boots</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Suede High-Top Boots"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="Nike"
-            data-price="50.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 9 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/watches/1.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">G-Shock</h5>
-            <h4 class="card-text btn p-price">₱100.00</h4>
+          <!-- Product 8 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img src="images/8.jpg" class="card-img-top mb-3" alt="..." />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">Nike</h5>
+                <h4 class="card-text btn p-price">₱50.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="Nike"
+                data-price="50.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="G-Shock"
-            data-price="100.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 10 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/watches/2.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">BlckWatch</h5>
-            <h4 class="card-text btn p-price">₱150.00</h4>
+          <!-- Product 9 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/watches/1.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">G-Shock</h5>
+                <h4 class="card-text btn p-price">₱100.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="G-Shock"
+                data-price="100.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="BlckWatch"
-            data-price="150.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
-        </div>
 
-        <!-- Product 11 -->
-        <div class="card product" style="width: 18rem">
-          <img src="images/watches/3.jpg" class="card-img-top mb-3" alt="..." />
-          <div class="card-body star">
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <span class="material-symbols-outlined">stars</span>
-            <h5 class="card-title p-name">LuxryWatch</h5>
-            <h4 class="card-text btn p-price">₱80.00</h4>
+          <!-- Product 10 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/watches/2.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">BlckWatch</h5>
+                <h4 class="card-text btn p-price">₱150.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="BlckWatch"
+                data-price="150.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          <button
-            class="buy-btn add-to-cart"
-            data-product="LuxryWatch"
-            data-price="80.00"
-            data-micron="jelly"
-          >
-            add to cart
-          </button>
+
+          <!-- Product 11 -->
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="card product product-card">
+              <img
+                src="images/watches/3.jpg"
+                class="card-img-top mb-3"
+                alt="..."
+              />
+              <div class="card-body star">
+                <div class="d-flex mb-2">
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h5 class="card-title p-name">LuxryWatch</h5>
+                <h4 class="card-text btn p-price">₱80.00</h4>
+              </div>
+              <button
+                class="buy-btn add-to-cart"
+                data-product="LuxryWatch"
+                data-price="80.00"
+                data-micron="jelly"
+              >
+                add to cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
